@@ -1,0 +1,20 @@
+{
+  "name": "sudoku",
+  "version": "1.0.0",
+  "description": "Sudoku game created with HTML, CSS and TypeScript.",
+  "main": "main.ts",
+  "scripts": {
+    "start": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielJHV/sudoku.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielJHV/sudoku/issues"
+  },
+  "homepage": "https://github.com/DanielJHV/sudoku#readme"
+}
