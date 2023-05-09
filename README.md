@@ -1,3 +1,3 @@
 # Sudoku
 
-Sudoku game created with HTML, CSS and JS.
+Sudoku game created with HTML, CSS and TypeScript.
