@@ -55,16 +55,31 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-right: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
   font-size: 2.2rem;
   font-weight: 600;
+  border-right: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.tile {
+  border-bottom: 1px solid #ccc;
 }
 
 .digits {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
   height: 5rem;
   width: 45rem;
-  background-color: #000;
+  border: 2px solid #222;
+}
+
+.digit:last-child {
+  border-right: 0;
+}
+
+.digit-selected {
+  background-color: #222;
+  color: #fff;
 }
 
 .footer {
