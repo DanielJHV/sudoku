@@ -1,7 +1,9 @@
 "use strict";
+const errorsEl = document.querySelector('.errors');
 const boardEl = document.querySelector('.board');
 const digitsEl = document.querySelector('.digits');
 let digitSelected;
+let errors = 0;
 const board = [
     [4, 5, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 2, 0, 7, 0, 6, 3, 0],
@@ -37,8 +39,17 @@ const setGame = function () {
                 tile.style.backgroundColor = '#eee';
                 tile.style.pointerEvents = `none`;
             }
+            if (i === 2 || i === 5) {
+                tile.style.borderBottom = '2px solid #000';
+            }
+            if (j === 2 || j === 5) {
+                tile.style.borderRight = '2px solid #000';
+            }
             tile.classList.add('tile');
             tile.id = `${i}-${j}`;
+            tile.addEventListener('click', () => {
+                selectTile(tile);
+            });
             boardEl === null || boardEl === void 0 ? void 0 : boardEl.appendChild(tile);
         }
     }
@@ -61,4 +72,26 @@ const selectDigit = function (digit) {
     digit.classList.add('digit-selected');
     digitSelected = Number(digit.textContent);
     console.log(digitSelected);
+};
+const selectTile = function (tile) {
+    if (digitSelected) {
+        tile.textContent = `${digitSelected}`;
+        checkBoard(tile);
+    }
+};
+const checkBoard = function (tile) {
+    const coords = tile.id;
+    const row = Number(coords.charAt(0));
+    const col = Number(coords.charAt(2));
+    if (solution[row][col] === Number(tile.textContent)) {
+        tile.style.color = '#06f';
+        tile.style.pointerEvents = 'none';
+    }
+    else {
+        tile.style.color = '#ab0f0f';
+        if (errorsEl === null)
+            return;
+        errors++;
+        errorsEl.textContent = `Errors: ${errors}`;
+    }
 };

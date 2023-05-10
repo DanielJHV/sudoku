@@ -37,9 +37,9 @@ body {
 }
 
 .errors {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   font-weight: 600;
-  color: rgb(144, 7, 7);
+  color: #ab0f0f;
 }
 
 .board {
@@ -55,7 +55,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2.2rem;
+  font-size: 2.6rem;
   font-weight: 600;
   border-right: 1px solid #ccc;
   cursor: pointer;
