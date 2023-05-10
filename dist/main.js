@@ -39,12 +39,14 @@ const setGame = function () {
                 tile.style.backgroundColor = '#eee';
                 tile.style.pointerEvents = `none`;
             }
-            if (i === 2 || i === 5) {
+            if (i === 2 || i === 5)
                 tile.style.borderBottom = '2px solid #000';
-            }
-            if (j === 2 || j === 5) {
+            if (i === 8)
+                tile.style.borderBottom = 'none';
+            if (j === 2 || j === 5)
                 tile.style.borderRight = '2px solid #000';
-            }
+            if (j === 8)
+                tile.style.borderRight = 'none';
             tile.classList.add('tile');
             tile.id = `${i}-${j}`;
             tile.addEventListener('click', () => {

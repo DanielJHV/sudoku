@@ -45,13 +45,10 @@ const setGame = function () {
         tile.style.pointerEvents = `none`;
       }
 
-      if (i === 2 || i === 5) {
-        tile.style.borderBottom = '2px solid #000';
-      }
-
-      if (j === 2 || j === 5) {
-        tile.style.borderRight = '2px solid #000';
-      }
+      if (i === 2 || i === 5) tile.style.borderBottom = '2px solid #000';
+      if (i === 8) tile.style.borderBottom = 'none';
+      if (j === 2 || j === 5) tile.style.borderRight = '2px solid #000';
+      if (j === 8) tile.style.borderRight = 'none';
 
       tile.classList.add('tile');
       tile.id = `${i}-${j}`;
@@ -59,6 +56,7 @@ const setGame = function () {
       tile.addEventListener('click', () => {
         selectTile(tile);
       });
+
       boardEl?.appendChild(tile);
     }
   }
@@ -72,6 +70,7 @@ const setGame = function () {
     digit.addEventListener('click', () => {
       selectDigit(digit);
     });
+
     digitsEl?.appendChild(digit);
   }
 };
@@ -98,6 +97,7 @@ const checkBoard = function (tile: HTMLDivElement) {
   const coords: string = tile.id;
   const row: number = Number(coords.charAt(0));
   const col: number = Number(coords.charAt(2));
+
   if (solution[row][col] === Number(tile.textContent)) {
     tile.style.color = '#06f';
     tile.style.pointerEvents = 'none';
