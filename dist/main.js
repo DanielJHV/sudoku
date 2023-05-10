@@ -90,9 +90,9 @@ const checkBoard = function (tile) {
         tile.style.pointerEvents = 'none';
     }
     else {
-        tile.style.color = '#ab0f0f';
         if (errorsEl === null)
             return;
+        tile.style.color = '#ab0f0f';
         errors++;
         errorsEl.textContent = `Errors: ${errors}`;
     }
